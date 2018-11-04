@@ -1,0 +1,26 @@
+{
+  "name": "repo-baseline-file-available",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --recursive test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/repo-baseline/file-available.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/repo-baseline/file-available/issues"
+  },
+  "homepage": "https://github.com/repo-baseline/file-available#readme",
+  "dependencies": {
+    "bluebird": "^3.5.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
