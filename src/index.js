@@ -1,9 +1,10 @@
 const Promise = require('bluebird');
 const fs = require('fs');
 const path = require('path')
+const packageJson = require('../package.json')
 
 module.exports = {
-    run: (repoPath, options, resultCallback) => {
+    run: (repoPath, options, level, resultCallback) => {
         if (!options) {
             return Promise.reject(new Error('options have to be defined!'));
         }
@@ -17,14 +18,14 @@ module.exports = {
             let isFileAvailable = false
             try {
                 isFileAvailable = fs.statSync(fullFilePath).isFile();
-            } catch (err) { 
+            } catch (err) {
                 isCheckFullyValid = false;
             }
-            resultCallback(`"${fullFilePath}" is available`, isFileAvailable);
+            resultCallback(`"${fileToCheck}" is available`, isFileAvailable);
         });
 
         if (!isCheckFullyValid) {
-            return Promise.reject()
+            return Promise.reject(`${packageJson.name} violated`)
         }
         return Promise.resolve();
     },
