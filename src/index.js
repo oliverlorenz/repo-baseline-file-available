@@ -4,6 +4,9 @@ const path = require('path')
 
 module.exports = {
     run: (repoPath, options, resultCallback) => {
+        if (!options) {
+            return Promise.reject(new Error('options have to be defined!'));
+        }
         let isCheckFullyValid = true;
         options.files.forEach(fileToCheck => {
             const fullFilePath = path.join(
@@ -24,5 +27,6 @@ module.exports = {
             return Promise.reject()
         }
         return Promise.resolve();
-    }
+    },
+    getRules: () => []
 }
