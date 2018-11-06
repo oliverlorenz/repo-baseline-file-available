@@ -2,9 +2,9 @@ const Promise = require('bluebird');
 const fs = require('fs');
 const path = require('path')
 const packageJson = require('../package.json')
- 
-module.exports = {
-    run: (repoPath, callback, level, options) => {
+
+module.exports = function(pluginManager, repoPath, config) {
+    function run(repoPath, callback, level, options) {
         if (!options) {
             return Promise.reject(new Error('options have to be defined!'));
         }
@@ -28,6 +28,6 @@ module.exports = {
             return Promise.reject(`${packageJson.name} violated`)
         }
         return Promise.resolve();
-    },
-    getRules: () => []
+    }
+    return { run }
 }
