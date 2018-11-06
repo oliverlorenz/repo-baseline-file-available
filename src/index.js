@@ -4,7 +4,7 @@ const path = require('path')
 const packageJson = require('../package.json')
 
 module.exports = {
-    run: (repoPath, options, level, resultCallback) => {
+    run: (repoPath, callback, level, options) => {
         if (!options) {
             return Promise.reject(new Error('options have to be defined!'));
         }
@@ -21,7 +21,7 @@ module.exports = {
             } catch (err) {
                 isCheckFullyValid = false;
             }
-            resultCallback(`"${fileToCheck}" is available`, isFileAvailable);
+            callback(`"${fileToCheck}" is available`, isFileAvailable);
         });
 
         if (!isCheckFullyValid) {
