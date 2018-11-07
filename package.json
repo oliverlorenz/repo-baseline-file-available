@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/repo-baseline/file-available.git"
+    "url": "git+https://github.com/oliverlorenz/repo-baseline-file-available.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/repo-baseline/file-available/issues"
+    "url": "https://github.com/oliverlorenz/repo-baseline-file-available/issues"
   },
-  "homepage": "https://github.com/repo-baseline/file-available#readme",
+  "homepage": "https://github.com/oliverlorenz/repo-baseline-file-available#readme",
   "dependencies": {
     "bluebird": "^3.5.2"
   },
