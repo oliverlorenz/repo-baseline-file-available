@@ -21,7 +21,7 @@ module.exports = function(pluginManager, repoPath, config) {
             } catch (err) {
                 isCheckFullyValid = false;
             }
-            callback(`"${fileToCheck}" is available`, isFileAvailable);
+            callback(`"${fileToCheck}" is available`, isFileAvailable, level);
         });
 
         if (!isCheckFullyValid) {
